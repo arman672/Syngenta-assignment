@@ -1,0 +1,20 @@
+{
+  "name": "backend-task-2",
+  "version": "1.0.0",
+  "description": "Goal\r Need to develop an app that offers common functionality for digital agriculture apps (such as \r OAuth-based Single Sign-On, properties, seasons, field records, etc). The API is built on HTTP and is \r mostly RESTful: It has predictable resource URLs, returns HTTP response codes to indicate errors. It \r also accepts and returns JSON in the HTTP body.\r Functional Overview\r General Concepts\r Organization\r An Organization is a master entity that has a set of properties. This entity groups and controls all the \r resources involved in the culture, for instance, different crops, seasons, etc.\r Property\r A property is the representation of a farm with a set of regions and fields. Basically, an organization \r can have multiple properties.\r Region\r The platform has a system of hierarchical representation of geographical structures, composed \r of Fields and Regions. A region may contain fields or other regions. Regions work like trees: a region \r can be a root or a node - when it contains other child regions - or a leaf - when it is an actual field, \r defined by a specific geometry.\r Field\r A field is a specialization of a region. Fields are specifically identified as the leaf of the region tree. It \r is specifically the only entity which has an actual polygon that describes its size and position in the \r world.\r Crop Cycle\r What is a Crop Cycle?\r The Crop Cycle is a generical entity responsible for grouping a list of fields with a crop assigned over \r time.\r Crop Cycle Property\r Crop Cycle Property is the association of a Crop Cycle to a property (or part of its fields). This way a \r property can have different cycles running at the same time, depending on the type of crops that are \r cultivated in this property.\r Crop Cycle Field\r Crop Cycle Field is a cycle defined to a field of a property. This way the property can have multiple \r cycles assigned depending on how many fields with different crops it has.\r Crop\r A crop is something that can be grown and harvested extensively for profit or subsistence. E.g: \r Soybean, Cotton, Coffee.\r Expectations\r - Clean maintainable code\r - Unit tests (TDD would be ideal)\r - Suitable data modelling\r - OAuth implementation\r - Working solution – if possible do send us the postman collection.\r Good To Have\r - Optimizations and scalable design at the API and DB level",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "email-validator": "^2.0.4",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.7.5",
+    "nodemon": "^2.0.20"
+  }
+}
